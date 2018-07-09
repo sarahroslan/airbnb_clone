@@ -1,0 +1,52 @@
+<%= form_for [current_user, @listing] do |form| %>
+
+<div class="text-field">
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+</div><br />
+
+<div class="text-field">
+  <%= form.label :address %>
+  <%= form.text_field :address %>
+</div><br />
+
+<div class="text-field">
+  <%= form.label :home_type %>
+  <%= form.text_field :home_type %>
+</div><br />
+
+<div class="text-field">
+  <%= form.label :accommodates %>
+  <%= number_field(:listing, :accommodates, in: 1..10, step: 1) %>
+</div><br />
+
+<div class="text-field">
+  <%= form.label :bedroom %>
+  <%= number_field(:listing, :bedroom, in: 1..8, step: 1) %>
+</div><br />
+
+<div class="text-field">
+  <%= form.label :bathroom %>
+  <%= number_field(:listing, :bathroom, in: 1..5, step: 1) %>
+</div><br />
+
+<div class="field">
+  <%= form.label "Kitchen Available" %> <%= form.check_box :is_kitchen %> 
+</div><br />
+
+<div class="field">
+  <%= form.label "Internet Available" %> <%= form.check_box :is_internet %> 
+</div><br />
+
+<div class="text-field">
+  <%= form.label :price %>
+  <%= number_field(:listing, :price, in: 100..1500, step: 50) %>
+</div><br />
+
+<div class="submit-field">
+  <%= form.submit %>
+</div>
+
+<% end %>
+
+

@@ -1,0 +1,19 @@
+<h1> rent my house! </h1>
+
+
+<br /><br />
+
+<%= @listing.description %> <br />
+<%= @listing.address %> <br />
+<%= @listing.home_type %> <br />
+<h4> Accommodates: </h4> <%= @listing.accommodates %>
+<h4> No. of bedrooms: </h4> <%= @listing.bedroom %>
+<h4> No. of bathrooms: </h4> <%= @listing.bathroom %>
+<h4> Kitchen Available: </h4>
+<% @listing.is_kitchen %>
+<% if true %>
+	<%= "yes" %>
+<% end %>
+
+<br />
+<br />

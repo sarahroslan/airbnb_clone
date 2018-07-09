@@ -9,16 +9,16 @@ class UsersController < Clearance::UsersController
 
 	    if @user.save
 	      sign_in @user
-	      redirect_back_or url_after_create # where are you going? fix this!
+	     
+	      redirect_to user_path(@user)
 	    else
 	      render template: "users/new"
     	end
 	end
 
-	#def url_after_create
-		#'/user/:id'
-
-	#end
+	def show
+    @user = User.find(params[:id])
+  end
 
 	def user_from_params
 
