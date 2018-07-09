@@ -5,9 +5,7 @@ class ListingsController < ApplicationController
 	# user can book listings through a calendar
 
 	def new
-		
 		@listing = Listing.new
-
 	end
 
 	def create
@@ -20,7 +18,8 @@ class ListingsController < ApplicationController
 	end
 
 	def show
-		@listing = Listing.find(params[:id]) # pass 2 arguments!
+		@listing = Listing.find(params[:id]) 
+		@listings = Listing.all
 	end
 
 	def listing_params
@@ -28,9 +27,12 @@ class ListingsController < ApplicationController
       params.require(:listing).permit(:description, :address, :home_type, :accommodates, :bedroom, :bathroom, :is_kitchen, :is_internet, :price)
 	end
 
-	#def update
-		#listing = Listing.update(params)
-	#end
+	def index
+  	#@listings = Listing.all
+  	#@listings = Listing.paginate(:page => params[:page], :per_page => 5)
+	end
+end
+
+
 
 	
-end

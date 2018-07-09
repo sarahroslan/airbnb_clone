@@ -30,10 +30,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem "clearance"
-
 #figaro 
 gem "figaro"
-
+#faker
+gem "faker"
+#paginate
+gem 'will_paginate', '~> 3.1.0'
 #omniauth
 gem "omniauth"
 #omniauth-google-oauth2
